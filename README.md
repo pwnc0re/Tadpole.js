@@ -10,7 +10,19 @@ Basic jQuery is required.
 Tadpole.js is a simple library for injecting javascript views on demand. It could careless about what templating system you use or how you use the templating system.
 
 ### How does it work?
-Tadpole.js maps easy to remember names to the javascript view files. Tadpole.js also injects the view as needed then renders the view for the user to interact with.
+Tadpole.js maps easy to remember names to the javascript view files. Tadpole.js also injects the view as needed then renders the view for the user to interact with. The javascript view files are setup in a way
+that makes them easy for Tadpole.js to interact with below is an example using handlebars.
+
+```
+
+  var view = {
+        render: function() {
+            var source = $("#menu-tpl").html();
+            var template = Handlebars.compile(source);
+            $("#main").html(template);
+        }
+    }
+```
 
 ### Examples
 I will have some examples up shortly.
